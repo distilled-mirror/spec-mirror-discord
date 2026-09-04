@@ -20494,11 +20494,21 @@
           "primary_sku_id": {
             "$ref": "#/components/schemas/SnowflakeType"
           },
+          "flags": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flags_new": {
+            "type": "string"
+          },
           "bot": {
             "$ref": "#/components/schemas/UserResponse"
           },
           "slug": {
             "type": "string"
+          },
+          "vibegrations_project_id": {
+            "$ref": "#/components/schemas/SnowflakeType"
           },
           "guild_id": {
             "$ref": "#/components/schemas/SnowflakeType"
@@ -20539,13 +20549,6 @@
           "verify_key": {
             "type": "string"
           },
-          "flags": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "flags_new": {
-            "type": "string"
-          },
           "max_participants": {
             "type": [
               "integer",
@@ -20567,9 +20570,9 @@
           "icon",
           "description",
           "type",
-          "verify_key",
           "flags",
-          "flags_new"
+          "flags_new",
+          "verify_key"
         ]
       },
       "ApplicationRoleConnectionsMetadataItemRequest": {
@@ -21630,6 +21633,13 @@
           "primary_sku_id": {
             "$ref": "#/components/schemas/SnowflakeType"
           },
+          "flags": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flags_new": {
+            "type": "string"
+          },
           "bot": {
             "$ref": "#/components/schemas/UserResponse"
           }
@@ -21639,7 +21649,9 @@
           "name",
           "icon",
           "description",
-          "type"
+          "type",
+          "flags",
+          "flags_new"
         ]
       },
       "BasicGuildMemberResponse": {
@@ -29989,6 +30001,13 @@
           "primary_sku_id": {
             "$ref": "#/components/schemas/SnowflakeType"
           },
+          "flags": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flags_new": {
+            "type": "string"
+          },
           "bot": {
             "$ref": "#/components/schemas/UserResponse"
           }
@@ -29998,7 +30017,9 @@
           "name",
           "icon",
           "description",
-          "type"
+          "type",
+          "flags",
+          "flags_new"
         ]
       },
       "IntegrationExpireBehaviorTypes": {
@@ -30328,11 +30349,21 @@
           "primary_sku_id": {
             "$ref": "#/components/schemas/SnowflakeType"
           },
+          "flags": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flags_new": {
+            "type": "string"
+          },
           "bot": {
             "$ref": "#/components/schemas/UserResponse"
           },
           "slug": {
             "type": "string"
+          },
+          "vibegrations_project_id": {
+            "$ref": "#/components/schemas/SnowflakeType"
           },
           "guild_id": {
             "$ref": "#/components/schemas/SnowflakeType"
@@ -30373,13 +30404,6 @@
           "verify_key": {
             "type": "string"
           },
-          "flags": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "flags_new": {
-            "type": "string"
-          },
           "max_participants": {
             "type": [
               "integer",
@@ -30401,9 +30425,9 @@
           "icon",
           "description",
           "type",
-          "verify_key",
           "flags",
-          "flags_new"
+          "flags_new",
+          "verify_key"
         ]
       },
       "InviteChannelRecipientResponse": {
@@ -35319,11 +35343,21 @@
           "primary_sku_id": {
             "$ref": "#/components/schemas/SnowflakeType"
           },
+          "flags": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flags_new": {
+            "type": "string"
+          },
           "bot": {
             "$ref": "#/components/schemas/UserResponse"
           },
           "slug": {
             "type": "string"
+          },
+          "vibegrations_project_id": {
+            "$ref": "#/components/schemas/SnowflakeType"
           },
           "guild_id": {
             "$ref": "#/components/schemas/SnowflakeType"
@@ -35362,13 +35396,6 @@
             }
           },
           "verify_key": {
-            "type": "string"
-          },
-          "flags": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "flags_new": {
             "type": "string"
           },
           "max_participants": {
@@ -35483,9 +35510,9 @@
           "icon",
           "description",
           "type",
-          "verify_key",
           "flags",
           "flags_new",
+          "verify_key",
           "redirect_uris",
           "interactions_endpoint_url",
           "role_connections_verification_url",
