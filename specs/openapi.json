@@ -24096,6 +24096,25 @@
                 "type": "null"
               }
             ]
+          },
+          "target_user_ids": {
+            "description": "The IDs of the users to target with this invite.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SnowflakeType"
+                },
+                "maxItems": 1000,
+                "uniqueItems": true
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         }
       },
