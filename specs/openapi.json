@@ -70,7 +70,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplicationFormPartial"
+                "$ref": "#/components/schemas/ApplicationUpdateFormPartial"
               }
             }
           },
@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ApplicationFormPartial"
+                "$ref": "#/components/schemas/ApplicationUpdateFormPartial"
               }
             }
           },
@@ -20668,216 +20668,6 @@
         ],
         "format": "int32"
       },
-      "ApplicationFormPartial": {
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": [
-              "object",
-              "null"
-            ],
-            "properties": {
-              "default": {
-                "type": "string",
-                "maxLength": 400
-              },
-              "localizations": {
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "additionalProperties": {
-                  "type": "string",
-                  "maxLength": 400
-                }
-              }
-            },
-            "required": [
-              "default"
-            ]
-          },
-          "icon": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "contentEncoding": "base64"
-          },
-          "cover_image": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "contentEncoding": "base64"
-          },
-          "team_id": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/SnowflakeType"
-              }
-            ]
-          },
-          "flags": {
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "interactions_endpoint_url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "maxLength": 2048,
-            "format": "uri"
-          },
-          "explicit_content_filter": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/ApplicationExplicitContentFilterTypes"
-              }
-            ]
-          },
-          "max_participants": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "minimum": -1,
-            "format": "int32"
-          },
-          "type": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/ApplicationTypes"
-              }
-            ]
-          },
-          "tags": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string",
-              "maxLength": 20
-            },
-            "maxItems": 5,
-            "uniqueItems": true
-          },
-          "custom_install_url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "maxLength": 2048,
-            "format": "uri"
-          },
-          "install_params": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/ApplicationOAuth2InstallParams"
-              }
-            ]
-          },
-          "role_connections_verification_url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "maxLength": 2048,
-            "format": "uri"
-          },
-          "integration_types_config": {
-            "type": [
-              "object",
-              "null"
-            ],
-            "additionalProperties": {
-              "oneOf": [
-                {
-                  "type": "null"
-                },
-                {
-                  "$ref": "#/components/schemas/ApplicationIntegrationTypeConfiguration"
-                }
-              ]
-            },
-            "minProperties": 1,
-            "maxProperties": 2
-          },
-          "event_webhooks_status": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "type": "integer",
-                "enum": [
-                  1,
-                  2
-                ],
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/ApplicationEventWebhooksStatus"
-                  }
-                ],
-                "format": "int32"
-              }
-            ]
-          },
-          "event_webhooks_url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Event webhooks URL for the app to receive webhook events",
-            "maxLength": 2048,
-            "format": "uri"
-          },
-          "event_webhooks_types": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string",
-              "enum": [
-                "APPLICATION_AUTHORIZED",
-                "APPLICATION_DEAUTHORIZED",
-                "ENTITLEMENT_CREATE",
-                "ENTITLEMENT_DELETE",
-                "ENTITLEMENT_UPDATE",
-                "GAME_DIRECT_MESSAGE_CREATE",
-                "GAME_DIRECT_MESSAGE_DELETE",
-                "GAME_DIRECT_MESSAGE_UPDATE",
-                "LOBBY_MESSAGE_CREATE",
-                "LOBBY_MESSAGE_DELETE",
-                "LOBBY_MESSAGE_UPDATE",
-                "QUEST_USER_ENROLLMENT"
-              ],
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/ActionTypes"
-                }
-              ]
-            },
-            "uniqueItems": true
-          }
-        }
-      },
       "ApplicationIdentityProviderAuthType": {
         "type": "string",
         "oneOf": [
@@ -21312,6 +21102,216 @@
           }
         ],
         "format": "int32"
+      },
+      "ApplicationUpdateFormPartial": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "default": {
+                "type": "string",
+                "maxLength": 400
+              },
+              "localizations": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "additionalProperties": {
+                  "type": "string",
+                  "maxLength": 400
+                }
+              }
+            },
+            "required": [
+              "default"
+            ]
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "contentEncoding": "base64"
+          },
+          "cover_image": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "contentEncoding": "base64"
+          },
+          "team_id": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/SnowflakeType"
+              }
+            ]
+          },
+          "flags": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "interactions_endpoint_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2048,
+            "format": "uri"
+          },
+          "explicit_content_filter": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ApplicationExplicitContentFilterTypes"
+              }
+            ]
+          },
+          "max_participants": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": -1,
+            "format": "int32"
+          },
+          "type": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ApplicationTypes"
+              }
+            ]
+          },
+          "tags": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string",
+              "maxLength": 20
+            },
+            "maxItems": 5,
+            "uniqueItems": true
+          },
+          "custom_install_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2048,
+            "format": "uri"
+          },
+          "install_params": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/ApplicationOAuth2InstallParams"
+              }
+            ]
+          },
+          "role_connections_verification_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2048,
+            "format": "uri"
+          },
+          "integration_types_config": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/components/schemas/ApplicationIntegrationTypeConfiguration"
+                }
+              ]
+            },
+            "minProperties": 1,
+            "maxProperties": 2
+          },
+          "event_webhooks_status": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "integer",
+                "enum": [
+                  1,
+                  2
+                ],
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/ApplicationEventWebhooksStatus"
+                  }
+                ],
+                "format": "int32"
+              }
+            ]
+          },
+          "event_webhooks_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Event webhooks URL for the app to receive webhook events",
+            "maxLength": 2048,
+            "format": "uri"
+          },
+          "event_webhooks_types": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string",
+              "enum": [
+                "APPLICATION_AUTHORIZED",
+                "APPLICATION_DEAUTHORIZED",
+                "ENTITLEMENT_CREATE",
+                "ENTITLEMENT_DELETE",
+                "ENTITLEMENT_UPDATE",
+                "GAME_DIRECT_MESSAGE_CREATE",
+                "GAME_DIRECT_MESSAGE_DELETE",
+                "GAME_DIRECT_MESSAGE_UPDATE",
+                "LOBBY_MESSAGE_CREATE",
+                "LOBBY_MESSAGE_DELETE",
+                "LOBBY_MESSAGE_UPDATE",
+                "QUEST_USER_ENROLLMENT"
+              ],
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ActionTypes"
+                }
+              ]
+            },
+            "uniqueItems": true
+          }
+        }
       },
       "ApplicationUserRoleConnectionResponse": {
         "type": "object",
